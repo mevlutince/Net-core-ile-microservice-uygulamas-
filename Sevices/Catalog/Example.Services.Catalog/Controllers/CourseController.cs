@@ -65,5 +65,9 @@ namespace Example.Services.Catalog.Controllers
             var response = await _courseService.DeleteeAsync(id);
             return CreateActionResultInstance(response);
         }
+        public void test()
+        {
+            string str = "heyyyyyyyyyyyy";
+        }
     }
 }
