@@ -1,1 +1,5 @@
 "Example.Services.Catalog": "applicationUrl": "http://localhost:5011",
+PhotoStockApi=>5012
+BasketApi=>5013
+Discount=>5014
+IdentityServer=> "http://localhost:5001",

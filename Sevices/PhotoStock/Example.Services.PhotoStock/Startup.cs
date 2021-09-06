@@ -1,5 +1,3 @@
-using Example.Services.Catalog.Services;
-using Example.Services.Catalog.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,14 +7,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Example.Services.Catalog
+namespace Example.Services.PhotoStock
 {
     public class Startup
     {
@@ -30,34 +27,20 @@ namespace Example.Services.Catalog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICategoryService, CategoryService>();
-
-            services.AddScoped<ICourseService, CourseService>();
-
-            services.AddAutoMapper(typeof(Startup));//startupdaki tüm Mappleri tarayacak
-
-            services.AddControllers(opt=> {
-                opt.Filters.Add(new AuthorizeFilter());
-            });
-
-            services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
-            services.AddSingleton<IDatabaseSettings>(sp =>
-            {
-                //GetRequiredService ilgili seervice bulamazsa hata veriri bunun için kullandýk
-                return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
-            });
-
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Example.Services.Catalog", Version = "v1" });
-            });
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.Authority = Configuration["IdentityServerUrl"];
-                options.Audience = "resource_catalog";
+                options.Audience = "resource_photo_stock";
                 options.RequireHttpsMetadata = false;
+            });
+
+            services.AddControllers(opt=> {
+                opt.Filters.Add(new AuthorizeFilter());
+            });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Example.Services.PhotoStock", Version = "v1" });
             });
         }
 
@@ -68,9 +51,10 @@ namespace Example.Services.Catalog
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Example.Services.Catalog v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Example.Services.PhotoStock v1"));
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
