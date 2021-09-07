@@ -40,11 +40,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Services.Order.Api"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Services.Order.Application", "Sevices\Order\Example.Services.Order.Application\Example.Services.Order.Application.csproj", "{BC21D66B-2A4E-4778-9555-3E6588A29F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Sevices.Order.Domain", "Sevices\Order\Example.Sevices.Order.Domain\Example.Sevices.Order.Domain.csproj", "{D47F974D-2E6C-49DC-8162-C89564DE30C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Services.Order.Domain", "Sevices\Order\Example.Sevices.Order.Domain\Example.Services.Order.Domain.csproj", "{D47F974D-2E6C-49DC-8162-C89564DE30C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Sevices.Order.Domain.Core", "Sevices\Order\Example.Sevices.Order.Domain.Core\Example.Sevices.Order.Domain.Core.csproj", "{984090A5-127E-4FCF-AA8D-D7E65215C629}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Services.Order.Domain.Core", "Sevices\Order\Example.Sevices.Order.Domain.Core\Example.Services.Order.Domain.Core.csproj", "{984090A5-127E-4FCF-AA8D-D7E65215C629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Sevices.Order.Infrastructure", "Sevices\Order\Example.Sevices.Order.Infrastructure\Example.Sevices.Order.Infrastructure.csproj", "{B676C42B-B646-4D7D-8A9E-8A74A20C5389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Services.Order.Infrastructure", "Sevices\Order\Example.Sevices.Order.Infrastructure\Example.Services.Order.Infrastructure.csproj", "{B676C42B-B646-4D7D-8A9E-8A74A20C5389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

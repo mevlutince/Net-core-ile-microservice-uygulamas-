@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Example.Services.Order.Domain.Core
+namespace Example.Services.Order.Application.Dtos
 {
-    public interface IAggregateRoot
+    public class CreatedOrderDto
     {
+        public int OrderId { get; set; }
     }
 }

@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Example.Sevices.Order.Domain\Example.Sevices.Order.Domain.csproj" />
-    <ProjectReference Include="..\Example.Sevices.Order.Infrastructure\Example.Sevices.Order.Infrastructure.csproj" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Example.Shared\Example.Shared.csproj" />
+    <ProjectReference Include="..\Example.Sevices.Order.Domain\Example.Services.Order.Domain.csproj" />
+    <ProjectReference Include="..\Example.Sevices.Order.Infrastructure\Example.Services.Order.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Example.Sevices.Order.Domain.Core
+namespace Example.Services.Order.Domain.Core
 {
     public abstract class Entity
     {
